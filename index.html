@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!--custom css file link-->
+    <link rel="sortcut icon" href="image/logo.png">
+    <link rel="stylesheet" href="/css.css">
+    <title>BEST-PRICE</title>
+
+</head>
+<body>
+    <div class="container">
+    
+        <div class="currency-toggler">
+            <span>USD</span>
+            <div class="toggler"></div>
+            <span>EGP</span>
+        </div>
+        <div class="product-container">
+
+        <div class="product">
+            <img src="image/banana1.png" alt="">
+            <h3>Organic Banana</h3>
+            <div class="amount">
+                <span class="dollar">$</span>
+                <span class="price">4.15</span>
+            </div>
+            <a href="#" class="btn">add to cart</a>
+        </div>
+        <div class="product">
+            <img src="image/Tomato2.png" alt="">
+            <h3>Organic Tomatos</h3>
+            <div class="amount">
+                <span class="dollar">$</span>
+                <span class="price">2.50</span>
+            </div>
+            <a href="#" class="btn">add to cart</a>
+        </div>
+
+        <div class="product">
+            <img src="image/Orrange5.png" alt="">
+            <h3>Organic Orange</h3>
+            <div class="amount">
+                <span class="dollar">$</span>
+                <span class="price">5.00</span>
+            </div>
+            <a href="#" class="btn">add to cart</a>
+        </div>
+
+        <div class="product">
+            <img src="image/Carrots3.png" alt="">
+            <h3>Organic Carrots</h3>
+            <div class="amount">
+                <span class="dollar">$</span>
+                <span class="price">1.27</span>
+            </div>
+            <a href="#" class="btn">add to cart</a>
+        </div>
+
+        <div class="product">
+            <img src="image/MANGO4.png" alt="">
+            <h3>Organic Mango</h3>
+            <div class="amount">
+                <span class="dollar">$</span>
+                <span class="price">9.04</span>
+            </div>
+            <a href="#" class="btn">add to cart</a>
+        </div>
+
+        <div class="product">
+            <img src="image/APPL3.png" alt="">
+            <h3>Apples Red</h3>
+            <div class="amount">
+                <span class="dollar">$</span>
+                <span class="price">6.00</span>
+            </div>
+            <a href="#" class="btn">add to cart</a>
+        </div>
+
+    </div>
+    </div>
+   <script>
+
+       let toggler =document.querySelector(".toggler");
+       let price = document.querySelectorAll(".price");
+       let dollar = document.querySelectorAll(".dollar");
+       let usd =47.26;
+       //1 dollar = 47.26 pounds which is the  current rate at 2024
+       toggler.onclick = () =>{
+
+       toggler.classList.toggle('active');
+
+       if(toggler.classList.contains('active')){
+           for(var i = 0; i< dollar.length; i++){
+           dollar[i].innerText ='EGP';
+           }
+           for(var A = 0; A< price.length; A++){
+           price[A].innerText =(price[A].innerText * usd).toFixed(2);
+        }
+       }else{
+        for(var i = 0; i< dollar.length; i++){
+            dollar[i].innerText ='US';
+           }
+           for(var A = 0; A<price.length; A++){
+            price[A].innerText =(price[A].innerText / usd).toFixed(2);
+           }
+       }
+       }
+   </script>
+
+</body>
+</html>
